@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         _Fire();
         _Move();
+        _Leave();
     }
 
     private void _Move()
@@ -74,6 +76,13 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    private void _Leave()
+    {
+    if (Input.GetKeyDown("1"))
+        {
+            SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+        }
+    }
 
     private void _Fire()
     {
